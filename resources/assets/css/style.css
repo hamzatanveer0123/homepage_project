@@ -1,0 +1,92 @@
+body{
+    background: #eee;
+}
+
+.card{
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+}
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.site-image {
+    width: 95px;
+}
+
+.add-new-card{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border-color: #db4437 !important;
+    background: #db4437;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+}
+
+.add-new-card:hover {
+    background: #db4437 !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.delete-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.8;
+    border-color: transparent;
+    visibility: hidden;
+}
+.delete-button:hover{
+    border-color: transparent;
+    background: white;
+}
+
+.invisible-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: .0;
+    border-color: transparent;
+}
+
+.sticky{
+    padding: 10px 10px 20px;
+    margin: 0 auto 20px auto;
+    width: 230px;
+    height: 230px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 18px;
+    line-height: 1.5;
+    border: 0;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+    background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+    background: -o-linear-gradient(#F9EFAF, #F7E98D);
+    background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+    background: linear-gradient(#F9EFAF, #F7E98D);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: box-shadow 0.5s ease;
+    font-smoothing: subpixel-antialiased;
+}
+
+.sticky:focus {
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.sticky:hover {
+    box-shadow: 0 5px 8px rgba(0,0,0,0.15);
+}
