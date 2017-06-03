@@ -12,7 +12,7 @@ class AddUserColumnInCards extends Migration
      */
     public function up()
     {
-        Schema::table('cards', function($table)
+        Schema::table('sites', function($table)
         {
             $table->string('user_id');
         });
@@ -25,7 +25,7 @@ class AddUserColumnInCards extends Migration
      */
     public function down()
     {
-        Schema::table('cards', function($table)
+        Schema::table('sites', function($table)
         {
             $table->dropColumn('user_id');
         });

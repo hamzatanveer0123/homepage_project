@@ -13,19 +13,19 @@
     </div>
 
     <!-- Current Sites -->
-    @if (count($cards) > 0)
+    @if (count($sites) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Bookmarks</h4>
             </div>
 
             <div class="panel-body">
-                @foreach ($cards as $card)
+                @foreach ($sites as $site)
                     <div class="col-md-3 col-sm-4 col-xs-4 card" style="text-align: center;">
-                        <a class="site-url" href="{{ $card->url }}" title="{{ $card->name  }}">
-                            <img class="site-image" src="{{ $card->image }}">
+                        <a class="site-url" href="{{ $site->url }}" title="{{ $site->name  }}">
+                            <img class="site-image" src="{{ $site->image }}">
                         </a>
-                        <form action="{{ url($card->id) }}" method="POST">
+                        <form action="{{ url($site->id) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <input type="hidden" name="_method" value="DELETE">
@@ -72,7 +72,7 @@
 @section('model-content')
 
     <!-- New Site Form -->
-    <form action="{{ url('cards') }}/{{ Auth::user()->id  }}" method="POST" class="form-horizontal">
+    <form action="{{ url('sites') }}/{{ Auth::user()->id  }}" method="POST" class="form-horizontal">
     {{ csrf_field() }}
 
     <!-- Site Name -->

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use App\Card;
+use App\Site;
 use App\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CardsController extends Controller
+class SitesController extends Controller
 {
     public function __construct()
     {
@@ -19,11 +19,11 @@ class CardsController extends Controller
     function index(){
         if (Auth::check())
         {
-            $cards = Auth::user()->cards;
+            $sites = Auth::user()->sites;
             $notes = Auth::user()->notes;
 
         }
-        return view('cards.index', compact('cards', 'notes'));
+        return view('sites.index', compact('sites', 'notes'));
     }
 
     function store(Request $request, User $user){
@@ -37,17 +37,17 @@ class CardsController extends Controller
                 ->withErrors($validator);
         }
 
-        $card = new Card;
-        $card->name = $request->name;
-        $card->url = $request->url;
-        $card->image = $request->image;
-        $user->cards()->save($card);
+        $site = new Site;
+        $site->name = $request->name;
+        $site->url = $request->url;
+        $site->image = $request->image;
+        $user->sites()->save($site);
 
         return redirect('/');
     }
 
-    function delete(Card $card) {
-        $card->delete();
+    function delete(Site $site) {
+        $site->delete();
         return redirect('/');
     }
 

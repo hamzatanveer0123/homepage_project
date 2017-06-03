@@ -13,10 +13,10 @@
 
 Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
-Route::get('/', 'CardsController@index');
-Route::post('cards/{user}', 'CardsController@store');
+Route::get('/', 'SitesController@index');
+Route::post('sites/{user}', 'SitesController@store');
 Route::post('notes/{user}', 'NotesController@store');
 
-Route::delete('/{card}', 'CardsController@delete');
+Route::delete('/{site}', 'SitesController@delete');
 
 Route::auth();

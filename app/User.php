@@ -28,7 +28,7 @@ class User extends Authenticatable
         return $this->hasMany(Note::class);
     }
 
-    function cards(){
-        return $this->hasMany(Card::class);
+    function sites(){
+        return $this->hasMany(Site::class);
     }
 }
