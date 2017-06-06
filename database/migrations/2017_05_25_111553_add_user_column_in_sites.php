@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserColumnInCards extends Migration
+class AddUserColumnInSites extends Migration
 {
     /**
      * Run the migrations.
