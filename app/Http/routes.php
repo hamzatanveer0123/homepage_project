@@ -17,6 +17,8 @@ Route::get('/', 'SitesController@index');
 Route::post('sites/{user}', 'SitesController@store');
 Route::post('notes/{user}', 'NotesController@store');
 
+Route::post('edit_notes', 'NotesController@edit_notes');
+
 Route::delete('/{site}', 'SitesController@delete');
 
 Route::auth();

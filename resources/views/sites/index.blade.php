@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link href="http://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <script src="{{ elixir('js/functions.js') }}"></script>
 @stop
@@ -14,7 +15,7 @@
 
     <!-- Current Sites -->
     @if (count($sites) > 0)
-        <div class="panel panel-default">
+        <div class="panel panel-default custom-panel-default">
             <div class="panel-heading">
                 <h4>Bookmarks</h4>
             </div>
@@ -44,28 +45,32 @@
 
 
     <!-- Current notes -->
-    @if (count($notes) > 0)
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>Notes</h4>
-            </div>
-
-            <div class="panel-body">
-                @foreach ($notes as $note)
-                    <textarea class="sticky">{{$note->body}}</textarea>
-                @endforeach
-            </div>
+    <div class="panel panel-default custom-panel-default">
+        <div class="panel-heading">
+            <h4>Notes</h4>
         </div>
-    @endif
 
+        <div class="panel-body masonry">
+            @foreach ($notes as $index => $note)
+                <div class="item">
+                    <textarea name="body" class="sticky" data-uid="{{ Auth::user()->id }}" data-id="{{$note->id}}">{{$note->body}}</textarea>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    {{-- form to add a new card --}}
     <form action="{{ url('notes') }}/{{ Auth::user()->id  }}"  method="POST">
         {{ csrf_field() }}
-
         <div class="form-group">
-            <textarea name="body" class="form-control"></textarea>
+            <input type="hidden" name="body" value="add text here...">
+            <button type="submit" class="btn btn-success add-new-notes">
+                <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+            </button>
         </div>
-        <button type="submit" class="btn btn-primary">Add Note</button>
     </form>
+
+
 
 @stop
 
@@ -83,14 +88,16 @@
                 <input type="text" name="image" id="image" class="form-control" placeholder="Image url of the website"><br/>
             </div>
         </div>
-        <!-- Add Site Button -->
-        <div class="form-group">
-            <div class="col-sm-6">
-                <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-plus"></i> Add Site
-                </button>
-            </div>
+        {{--<!-- Add Site Button -->--}}
+        {{--<div class="form-group">--}}
+            {{--<div class="col-sm-6">--}}
+
+            {{--</div>--}}
+        {{--</div>--}}
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Add Site</button>
         </div>
     </form>
-
 @stop

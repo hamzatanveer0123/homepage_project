@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Note;
 
-use App\Http\Requests;
-
 class NotesController extends Controller
 {
 
@@ -18,19 +16,29 @@ class NotesController extends Controller
     }
 
     function store(Request $request, User $user){
-//        $validator = Validator::make($request->all(), [
-//            'body' => 'required|max:255',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return redirect('/')
-//                ->withInput()
-//                ->withErrors($validator);
-//        }
-
         $note = new Note;
         $note->body = $request->body;
         $user->notes()->save($note);
 
         return redirect('/');
-    }}
+    }
+
+    function edit_notes(Request $request){
+
+        $this->validate($request, [
+            'uid' => 'required'
+        ]);
+
+//        $data = Input::all();
+        if($request->ajax())
+        {
+            $note_entry = Note::findOrFail($request->id);
+            $note_entry->id = $request->id;
+            $note_entry->user_id = $request->uid;
+            $note_entry->body = $request->note;
+            $note_entry->update();
+            return "success";
+        }
+        return "failed";
+    }
+}
