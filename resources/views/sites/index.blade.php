@@ -50,9 +50,9 @@
             <h4>Notes</h4>
         </div>
 
-        <div class="panel-body masonry">
+        <div class="panel-body" id="grid" data-columns>
             @foreach ($notes as $index => $note)
-                <div class="item">
+                <div class="column size-1of4">
                     <textarea name="body" class="sticky" data-uid="{{ Auth::user()->id }}" data-id="{{$note->id}}">{{$note->body}}</textarea>
                 </div>
             @endforeach
