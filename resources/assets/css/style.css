@@ -54,12 +54,12 @@ body {
 
 @media only screen and (max-width: 360px) {
     .site-image {
-        width: 50px;
+        width: 43px;
     }
 
     .card {
-        width: 75px;
-        height: 75px;
+        width: 64px;
+        height: 64px;
         margin: 5px !important;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
