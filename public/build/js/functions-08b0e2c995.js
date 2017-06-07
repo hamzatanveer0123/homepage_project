@@ -1,21 +1,47 @@
 $('document').ready(function () {
-    var textareas = $('textarea');
+    // var textareas = $('textarea');
+    //
+    // for (var i = 0; i < textareas.length; i++) {
+    //     resize(textareas[i]);
+    // }
+    //
+    // function resize(text) {
+    //     $(text).css('height', 'auto');
+    //     $(text).css('height', text.scrollHeight + 'px');
+    // }
+    //
+    // $('textarea').keypress(function () {
+    //     resize(this);
+    // });
+    //
+    // $('textarea').keyup(function (e) {
+    //     if (e.keyCode == 8) resize(this);
+    // });
 
-    for (var i = 0; i < textareas.length; i++) {
-        resize(textareas[i]);
-    }
+    // vue js 
+    // var link = '/';
+    // var data = {
+    //     message: null
+    // };
+    //
+    // Vue.http.get(link).then(function(response){
+    //     data.message = response.data;
+    // }, function(error){
+    //     console.log(error.statusText);
+    // });
+    // new Vue ({
+    //     el: '.grid',
+    //     data: data
+    // });
 
-    function resize(text) {
-        $(text).css('height', 'auto');
-        $(text).css('height', text.scrollHeight + 'px');
-    }
 
-    $('textarea').keypress(function () {
-        resize(this);
-    });
-
-    $('textarea').keyup(function (e) {
-        if (e.keyCode == 8) resize(this);
+    $('.grid').isotope({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        masonry: {
+            columnWidth: 50,
+            gutter: 10
+        }
     });
 
 
@@ -44,7 +70,7 @@ $('document').ready(function () {
     });
 
     // for saving changes
-    $(".sticky").change(function (event) {
+    $(".notes").change(function (event) {
         event.preventDefault();
         var note = $(this);
         var text = $(this).val();

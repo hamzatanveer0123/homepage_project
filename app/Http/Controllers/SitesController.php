@@ -6,6 +6,7 @@ use Auth;
 use App\Site;
 use App\User;
 
+use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -17,13 +18,14 @@ class SitesController extends Controller
     }
 
     function index(){
+        $agent = new Agent();
         if (Auth::check())
         {
             $sites = Auth::user()->sites;
             $notes = Auth::user()->notes;
-
         }
-        return view('sites.index', compact('sites', 'notes'));
+
+        return view('sites.index', compact('sites', 'notes', 'agent'));
     }
 
     function store(Request $request, User $user){

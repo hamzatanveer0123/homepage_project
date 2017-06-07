@@ -16,10 +16,6 @@
     <!-- Current Sites -->
     @if (count($sites) > 0)
         <div class="panel panel-default custom-panel-default">
-            <div class="panel-heading">
-                <h4>Bookmarks</h4>
-            </div>
-
             <div class="panel-body">
                 @foreach ($sites as $site)
                     <div class="col-md-3 col-sm-4 col-xs-4 card" style="text-align: center;">
@@ -46,14 +42,15 @@
 
     <!-- Current notes -->
     <div class="panel panel-default custom-panel-default">
-        <div class="panel-heading">
-            <h4>Notes</h4>
+        <div class="panel-heading custom-panel-heading">
+            <h3>My Notes</h3>
         </div>
 
-        <div class="panel-body" id="grid" data-columns>
+        <div class="panel-body grid">
+            <div class="grid-sizer"></div>
             @foreach ($notes as $index => $note)
-                <div class="column size-1of4">
-                    <textarea name="body" class="sticky" data-uid="{{ Auth::user()->id }}" data-id="{{$note->id}}">{{$note->body}}</textarea>
+                <div class="sticky grid-item" style="cursor: pointer" data-toggle="modal" data-target="#myNotes">
+                    {{ $note->body }}
                 </div>
             @endforeach
         </div>
@@ -69,9 +66,6 @@
             </button>
         </div>
     </form>
-
-
-
 @stop
 
 @section('model-content')
@@ -88,16 +82,32 @@
                 <input type="text" name="image" id="image" class="form-control" placeholder="Image url of the website"><br/>
             </div>
         </div>
-        {{--<!-- Add Site Button -->--}}
-        {{--<div class="form-group">--}}
-            {{--<div class="col-sm-6">--}}
-
-            {{--</div>--}}
-        {{--</div>--}}
-
         <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             <button type="submit" class="btn btn-primary">Add Site</button>
         </div>
     </form>
+@stop
+
+@section('model-notes')
+    @foreach ($notes as $index => $note)
+        <div class="modal fade" id="myNotes" tabindex="-1" role="dialog" aria-labelledby="addCard" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h3 class="modal-title" id="exampleModalLabel">Add New Card</h3>
+                    </div>
+                    <div class="modal-body">
+                        <textarea name="body" class="form-control notes" data-uid="{{ Auth::user()->id }}" data-id="{{$note->id}}">{{$note->body}}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @stop

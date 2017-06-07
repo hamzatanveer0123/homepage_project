@@ -10,8 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('/', 'SitesController@index');
 Route::post('sites/{user}', 'SitesController@store');

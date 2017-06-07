@@ -1,23 +1,25 @@
-html{
+html {
     height: 100%;
     background: #636FA4;
     background-repeat: no-repeat;
 }
-body{
+
+body {
     height: 100%;
-    background: #E8CBC0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #E8CBC0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #636FA4, #E8CBC0); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-repeat: no-repeat;
 }
 
-.logo{
-    font-family: 'Pacifico', cursive;
+.logo {
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
     color: #3b5998 !important;
     font-size: xx-large;
 }
 
-.user-menu{
+.user-menu {
     color: #3b5998 !important;
 }
 
@@ -30,7 +32,7 @@ body{
     background-color: rgba(231, 231, 231, 0.5);
 }
 
-.card{
+.card {
     width: 120px;
     height: 120px;
     padding: 10px;
@@ -38,18 +40,32 @@ body{
     background-color: #fff;
     border-radius: 5px;
     border: 1px solid #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.2s cubic-bezier(.25, .8, .25, 1);
 }
+
 .card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .site-image {
     width: 95px;
 }
 
-.add-new-card{
+@media only screen and (max-width: 360px) {
+    .site-image {
+        width: 50px;
+    }
+
+    .card {
+        width: 75px;
+        height: 75px;
+        margin: 5px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+}
+
+.add-new-card {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -57,15 +73,20 @@ body{
     bottom: 20px;
     right: 25px;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.4s cubic-bezier(.25, .8, .25, 1);
 }
 
 .add-new-card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.add-new-notes{
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.add-new-notes {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -73,15 +94,15 @@ body{
     bottom: 20px;
     right: 25px;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.2s cubic-bezier(.25, .8, .25, 1);
 }
 
 .add-new-notes:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.menu-btn{
+.menu-btn {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -89,15 +110,15 @@ body{
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.2s cubic-bezier(.25, .8, .25, 1);
 }
 
 .menu-btn:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.delete-button{
+.delete-button {
     position: absolute;
     top: 0;
     right: 0;
@@ -105,12 +126,13 @@ body{
     border-color: transparent;
     visibility: hidden;
 }
-.delete-button:hover{
+
+.delete-button:hover {
     border-color: transparent;
     background: white;
 }
 
-.invisible-button{
+.invisible-button {
     position: absolute;
     top: 0;
     right: 0;
@@ -118,40 +140,32 @@ body{
     border-color: transparent;
 }
 
-#grid[data-columns]::before {
-    content: '4 .column.size-1of4';
-}
-/* These are the classes that are going to be applied: */
-.column { float: left; }
-.size-1of4 { width: 25%; }
-
-@media screen and (max-width: 480px){
-    #grid[data-columns]::before {
-        content: '1 .column.size-1of1';
-    }
+.grid {
+    padding: 0px;
+    margin: 0 auto;
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    #grid[data-columns]::before {
-        content: '2 .column.size-1of2';
-    }
+.grid-sizer,
+.grid-item {
+    float: left;
+    width: 150px;
+    height: 200px;
+    margin-top: 10px;
 }
-@media screen and (min-width: 769px) {
-    #grid[data-columns]::before {
-        content: '3 .column.size-1of3';
-    }
+
+.grid-item--width2 {
+    width: 200px;
 }
-/* Again, you’re free to use and define the classes: */
-.column { float: left; }
-.size-1of1 { width: 100%; }
-.size-1of2 { width: 50%; }
-.size-1of3 { width: 33.333%; }
+
+.grid-item--height2 {
+    height: 200px;
+}
 
 .sticky {
     background: #fff;
     padding: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.2s cubic-bezier(.25, .8, .25, 1);
     border-radius: 2px;
     border: 0px;
     font-family: 'Roboto Slab', serif;
@@ -161,17 +175,24 @@ body{
     outline: none;
 }
 
-.sticky:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.sticky:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.custom-panel-default{
+.custom-panel-default {
     background: rgba(255, 255, 255, 0);
     border-color: rgba(154, 126, 126, 0);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.0);
 }
 
-.glow-success{
+.custom-panel-heading {
+    color: #3b5998 !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    font-family: 'Pacifico', cursive;
+}
+
+.glow-success {
     -webkit-transition: text-shadow 1s linear;
     -moz-transition: text-shadow 1s linear;
     -ms-transition: text-shadow 1s linear;
@@ -180,7 +201,7 @@ body{
     text-shadow: 0 0 10px #84ff00;
 }
 
-.glow-error{
+.glow-error {
     -webkit-transition: text-shadow 0.2s linear;
     -moz-transition: text-shadow 0.2s linear;
     -ms-transition: text-shadow 0.2s linear;
@@ -188,4 +209,6 @@ body{
     transition: text-shadow 0.2s linear;
     text-shadow: 0 0 10px #ff4f3d;
 }
+
+
 
