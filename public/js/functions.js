@@ -18,7 +18,7 @@ $('document').ready(function () {
     //     if (e.keyCode == 8) resize(this);
     // });
 
-    // vue js 
+    // vue js
     // var link = '/';
     // var data = {
     //     message: null
@@ -39,8 +39,8 @@ $('document').ready(function () {
         itemSelector: '.grid-item',
         percentPosition: true,
         masonry: {
-            columnWidth: 50,
-            gutter: 10
+            columnWidth: 46,
+            gutter: 10,
         }
     });
 
