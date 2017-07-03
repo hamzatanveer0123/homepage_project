@@ -16,7 +16,7 @@
     <!-- Current Sites -->
     @if (count($sites) > 0)
         <div class="panel panel-default custom-panel-default">
-            <div class="panel-body">
+            <div class="panel-body cards-grid">
                 @foreach ($sites as $site)
                     <div class="col-md-3 col-sm-4 col-xs-4 card" style="text-align: center;">
                         <a class="site-url" href="{{ $site->url }}" title="{{ $site->name  }}">
