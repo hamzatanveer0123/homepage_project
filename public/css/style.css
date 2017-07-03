@@ -48,11 +48,22 @@ body {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.site-image {
-    width: 95px;
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    .site-image {
+        width: 43px !important;
+    }
+
+    .card {
+        width: 64px;
+        height: 64px;
+        margin: 5px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
 }
 
-@media only screen and (max-width: 360px) {
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
     .site-image {
         width: 43px;
     }
@@ -63,6 +74,10 @@ body {
         margin: 5px !important;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
+}
+
+.site-image {
+    width: 95px;
 }
 
 .add-new-card {
@@ -149,16 +164,11 @@ body {
 .grid-item {
     float: left;
     width: 150px;
-    height: 200px;
     margin-top: 10px;
 }
 
 .grid-item--width2 {
     width: 200px;
-}
-
-.grid-item--height2 {
-    height: 200px;
 }
 
 .sticky {

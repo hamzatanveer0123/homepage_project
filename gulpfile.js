@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+// var vue = require('vue');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management

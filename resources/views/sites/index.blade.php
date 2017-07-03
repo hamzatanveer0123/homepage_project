@@ -49,7 +49,7 @@
         <div class="panel-body grid">
             <div class="grid-sizer"></div>
             @foreach ($notes as $index => $note)
-                <div class="sticky grid-item" style="cursor: pointer" data-toggle="modal" data-target="#myNotes">
+                <div class="sticky grid-item" style="cursor: pointer" data-toggle="modal" data-target="#myNotes-{{ $index  }}">
                     {{ $note->body }}
                 </div>
             @endforeach
@@ -91,7 +91,7 @@
 
 @section('model-notes')
     @foreach ($notes as $index => $note)
-        <div class="modal fade" id="myNotes" tabindex="-1" role="dialog" aria-labelledby="addCard" aria-hidden="true">
+        <div class="modal fade" id="myNotes-{{ $index  }}" tabindex="-1" role="dialog" aria-labelledby="addCard" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
